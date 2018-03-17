@@ -8,7 +8,9 @@ const app = express()
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-console.log("ss")
+// static files config
+app.use('/static', express.static('public'))
+
 app.get('/', (req, res) => res.send('Hello Worldxx!'))
 
 app.get('/html', index.indexHtml)
